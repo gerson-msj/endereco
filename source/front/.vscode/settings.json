@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        ".vscode/edge-profile-data": true,
+        ".vscode/firefox-profile": true
+    }
+}

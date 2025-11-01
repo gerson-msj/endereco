@@ -1,0 +1,21 @@
+{
+    "enderecos": [
+        {
+            "id": 1,
+            "nome": "Gerson",
+            "cep": "06053020",
+            "numero": "430",
+            "complemento": "112A"
+        }
+    ],
+    "ceps": [
+        {
+            "cep": "06053020",
+            "logradouro": "Avenida José Lourenço",
+            "bairro": "Jaguaribe",
+            "localidade": "Osasco",
+            "uf": "SP",
+            "estado": "São Paulo"
+        }
+    ]
+}

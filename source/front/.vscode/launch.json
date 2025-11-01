@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Windows",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}",
+            "userDataDir": "${workspaceFolder}/.vscode/edge-profile-data",
+            "preLaunchTask": "yarn debug"
+        },
+        {
+            "name": "Debug Linux",
+            "type": "firefox",
+            "request": "launch",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/src",
+            "preLaunchTask": "yarn debug",
+            "reAttach": true,
+            "reloadOnAttach": true,
+            "keepProfileChanges": true,
+            "firefoxExecutable": "/usr/bin/firefox",
+            "profileDir": "${workspaceFolder}/.vscode/firefox-profile",
+            "pathMappings": [
+                {
+                    "url": "http://localhost:5173/src",
+                    "path": "${workspaceFolder}/src"
+                }
+            ]
+        }
+    ]
+}
