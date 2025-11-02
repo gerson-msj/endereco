@@ -1,0 +1,14 @@
+nav {
+    width: 100%;
+}
+
+a {
+    color: var(--lnk-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--lnk-color-hover);
+    text-decoration: underline;
+}
+

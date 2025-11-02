@@ -1,0 +1,32 @@
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 25px;
+
+  th {
+    border-bottom: 1px solid;
+    font-weight: bold;
+    height: 30px;
+    width: 25%;
+    margin: 0;
+  }
+
+  th:first-child {
+    border-top-left-radius: 5px;
+  }
+
+  th:last-child {
+    border-top-right-radius: 5px;
+  }
+
+  td {
+    border-bottom: 1px solid;
+    text-align: center;
+    height: 40px;
+
+  }
+
+  tr:hover:not(:has(th)) {
+    cursor: pointer;
+  }
+}

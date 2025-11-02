@@ -5,10 +5,7 @@ function App() {
   return (
     <>
       <header>
-        {/* <nav>
-          <Link to="/">Home</Link>
-        </nav> */}
-        <h1>Endereço - APP</h1>
+        <h1>Endereço</h1>
       </header>
 
       <main>
