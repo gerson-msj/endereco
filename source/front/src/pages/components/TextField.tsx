@@ -1,9 +1,10 @@
 import { useAppDispatch } from "../../hooks";
-import { changeEndereco, type EnderecoState } from "../../store/endereco";
+import { changeEndereco } from "../../store/endereco";
+import type { IEndereco } from "../../types";
 
 interface TextFieldProps {
     label: string
-    name: keyof EnderecoState
+    name: keyof IEndereco
     value: string
 }
 

@@ -1,4 +1,4 @@
-export interface Endereco {
+export interface IEndereco {
     id: number,
     nome: string,
     cep: string,
@@ -25,7 +25,7 @@ export const CepDefault: Cep = {
     estado: ""
 }
 
-export const EnderecoDefault: Endereco = {
+export const EnderecoDefault: IEndereco = {
     id: 0,
     nome: "",
     cep: "",

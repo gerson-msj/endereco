@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react"
-import { type Cep, CepDefault, type Endereco, EnderecoDefault } from "../types"
+import { type Cep, CepDefault, type IEndereco, EnderecoDefault } from "../types"
 
 export default function Home() {
 
     const [endereco, setEndereco] = useState(EnderecoDefault);
     const [cep, setCep] = useState(CepDefault);
 
-    const [enderecos, setEnderecos] = useState<Endereco[]>([]);
+    const [enderecos, setEnderecos] = useState<IEndereco[]>([]);
     const [ceps, setCeps] = useState<Cep[]>([]);
     
     //const [seq, setSeq] = useState(1);
 
-    const remove = (enderecoToRemove: Endereco) =>
+    const remove = (enderecoToRemove: IEndereco) =>
         setEnderecos(prev => prev.filter(e => e !== enderecoToRemove));
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,21 +27,21 @@ export default function Home() {
 
     }
 
-    const obterTextoEndereco = (e: Endereco) => {
+    const obterTextoEndereco = (e: IEndereco) => {
         const c = e.cepData;
         return c 
             ? `${c.logradouro}, ${e.numero} ${e.complemento} - ${c.bairro} - ${c.localidade}/${c.uf}`
             : "";
     }
 
-    const obterEnderecos = async (): Promise<Endereco[]> => {
+    const obterEnderecos = async (): Promise<IEndereco[]> => {
         try {
             const url = `http://localhost:3000/enderecos`;
             const response = await fetch(url);
             if (!response.ok)
                 throw new Error(`Erro HTTP! Status: ${response.status}`);
             const result = await response.json();
-            return result?.length > 0 ? result as Endereco[] : [];
+            return result?.length > 0 ? result as IEndereco[] : [];
         } catch (error) {
             console.log('Não foi possível obter os endereços:', error);
             return [];

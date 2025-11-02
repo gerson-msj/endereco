@@ -1,25 +1,26 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { EnderecoDefault, type IEndereco } from "../../types";
 
 export interface EnderecoState {
-    nome: string
-    numero: string
+    endereco: IEndereco
 }
 
 const initialState: EnderecoState = {
-    nome: '',
-    numero: ''
+    endereco: EnderecoDefault
 }
 
 const enderecoSlice = createSlice({
     name: "enderecos",
     initialState,
     reducers: {
-        changeEndereco: (state, action: PayloadAction<{
-            name: keyof EnderecoState
-            value: string
-        }>) => {
+        changeEndereco: <k extends keyof IEndereco>(
+            state: EnderecoState,
+            action: PayloadAction<{
+                name: k
+                value: IEndereco[k]
+            }>) => {
             const { name, value } = action.payload
-            state[name] = value
+            state.endereco[name] = value
         }
     }
 })
