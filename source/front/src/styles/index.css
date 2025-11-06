@@ -49,7 +49,7 @@ header {
 
   h1 {
     margin: 2px;
-  } 
+  }
 }
 
 main {
@@ -150,6 +150,28 @@ table {
     background-color: var(--bg-button-hover);
     cursor: pointer;
   }
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 10;
+
+  background-color: rgba(0, 0, 0, .8);
+
+  margin: 0;
+  padding: 0;
+
+  cursor: default;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
